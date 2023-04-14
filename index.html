@@ -1,26 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Control Finance</title>
-    <link
-      rel="shortcut icon"
-      href="./src/assets/favicon.ico"
-      type="image/x-icon"
-    />
-    <meta
-      name="description"
-      content="Control Finance - Seu controle financeiro"
-    />
-    <link rel="stylesheet" href="./src/styles/globalStyles.css" />
-    <link rel="stylesheet" href="./src/styles/index.css" />
-  </head>
-  <body>
-    <main id="app"></main>
-    <script src="./src/scripts/modal.js"></script>
-    <script src="./src/scripts/valuesData.js"></script>
-    <script src="./src/scripts/index.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Control Finance</title>
+  <link rel="shortcut icon" href="./src/assets/favicon.ico" type="image/x-icon" />
+  <meta name="description" content="Control Finance - Seu controle financeiro" />
+  <link rel="stylesheet" href="./src/styles/globalStyles.css" />
+  <link rel="stylesheet" href="./src/styles/index.css" />
+  <link rel="stylesheet" href="./src/styles/reset.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="header--title">
+      <span class="header_title--brand1">Control</span>
+      <span class="header_title--grey1">Finance</span>
+    </h1>
+    <input class="header_button--register-new-value" type="button" value="Registrar novo valor">
+  </header>
+
+  <main id="app" class="container">
+    <div class="main_resume">
+      <h2 class="resume--title">Resumo Financeiro</h2>
+      <span class="btns--values">
+        <input type="button" id="btn_value-alls" class="btn-money--value" value="Todos">
+        <input type="button" id="btn_value-entry" class="btn-money--value" value="Entradas">
+        <input type="button" id="btn_value-exit" class="btn-money--value" value="Saidas">
+      </span>
+    </div>
+    <div class="soma-values">
+      <h1 class="">Soma dos Valores</h1>
+      <span class="soma-total"></span>
+    </div>
+    <section class="main_container--historic">
+      <ul class="historic--ul">
+        
+      </ul>
+    </section>
+    <dialog class="dialog">
+      <div class="modal">
+        <span class="modal__content">
+          <h1 class="modal__title">Registro de valor</h1>
+          <span class="close--modal material-symbols-outlined">close</span>
+        </span>
+        <span class="moda--description">Digite o valor e em seguida aperte no botão referente ao tipo do valor </span>
+        <div class="modal__inputs">
+          <h1 class="modal--close modal__inputs-title">Valor</h1>
+          <input type="number" placeholder="R$ 00,00" id="modal-value-input">
+        </div>
+        <div class="modal__inputs-types">
+          <h1 class="modal__inputs-types-title">Tipo de valor</h1>
+          <input type="button" class="inputs--types t" value="Entrada" id="type-entry">
+          <input type="button" class="inputs--types" value="Saida" id="type-exited">
+        </div>
+        <div class="modal__buttons-end">
+          <input type="button" class="modal_bottons--cancel" value="Cancelar">
+          <input type="button" class="modal_bottons--send" value="Inserir Valor">
+        </div>
+      </div>
+    </dialog>
+  </main>
+
+  <script type="module" src="./src/scripts/valuesData.js"></script>
+  <script type="module" src="./src/scripts/modal.js"></script>
+  <script type="module" src="./src/scripts/index.js"></script>
+</body>
+
 </html>
