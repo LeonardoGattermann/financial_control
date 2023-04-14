@@ -59,6 +59,7 @@ spanDelete.addEventListener('click',(event)=>{
         if(insertedValues[x].id == event.target.id){
             insertedValues.splice(x,1) 
             sumValues(arrayActualy)  
+            removeAlert(insertedValues)
         }
     });
 })
@@ -125,9 +126,19 @@ export function addItemArr(item,arr){
     arr.unshift(item)
     renderModal(insertedValues)
     sumValues(insertedValues)
+    removeAlert(insertedValues)
 }
 
+function removeAlert(arr){
+    const displayAlert = document.querySelector('.display_none--value')
+    if(arr.length > 0){
+        displayAlert.style.display = 'none';
+    }else if(arr.length < 1 ){
+        displayAlert.style.display = 'flex';
+    }
+}
 
+removeAlert(insertedValues)
 renderSelect(insertedValues)
 sumValues(insertedValues)
 renderModal(insertedValues)
